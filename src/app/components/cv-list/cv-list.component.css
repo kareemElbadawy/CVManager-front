@@ -1,0 +1,46 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .cv-list-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #3f51b5;
+  }
+  
+  .cv-list-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  mat-table {
+    width: 100%;
+  }
+  
+  mat-header-cell, mat-cell {
+    padding: 10px;
+  }
+  
+  
+  mat-paginator {
+    margin-top: 20px;
+  }
+  
+  .create-button-container {
+    text-align: right; /* Align the button to the right */
+    margin-bottom: 20px;
+  }
+  
+  button[mat-raised-button] {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #3f51b5;
+    color: white;
+  }
+  button[mat-raised-button]:hover {
+    background-color: #303f9f;
+  }

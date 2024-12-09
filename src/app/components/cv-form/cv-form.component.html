@@ -1,0 +1,75 @@
+<div class="form-container">
+    <form [formGroup]="cvForm" (ngSubmit)="onSubmit()">
+        <!-- Back Button -->
+        <button mat-icon-button color="primary" class="back-button" (click)="goBack()">
+            <mat-icon>arrow_back</mat-icon> <!-- Back Arrow Icon -->
+          </button>
+        <h1 style="color: black;">{{ isEditMode ? 'Edit CV' : 'Create CV' }}</h1>
+
+        <!-- CV Name -->
+        <mat-form-field appearance="fill">
+            <mat-label>CV Name</mat-label>
+            <input matInput formControlName="name" placeholder="Enter CV Name" />
+            <mat-error *ngIf="cvForm.get('name')?.hasError('required')">Name is required</mat-error>
+        </mat-form-field>
+
+        <!-- Personal Information -->
+        <div formGroupName="personalInformation" class="section">
+            <h3>Personal Information</h3>
+            <mat-form-field appearance="fill">
+                <mat-label>Full Name</mat-label>
+                <input matInput formControlName="fullName" placeholder="Enter Full Name" />
+                <mat-error *ngIf="cvForm.get('personalInformation.fullName')?.hasError('required')">
+                    Full Name is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>City Name</mat-label>
+                <input matInput formControlName="cityName" placeholder="Enter City Name" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" placeholder="Enter Email" />
+                <mat-error *ngIf="cvForm.get('personalInformation.email')?.hasError('email')">
+                    Please enter a valid email address
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Mobile Number</mat-label>
+                <input matInput formControlName="mobileNumber" placeholder="Enter Mobile Number" />
+                <mat-error *ngIf="cvForm.get('personalInformation.mobileNumber')?.hasError('required')">
+                    Mobile Number is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <!-- Experience Information -->
+        <div formGroupName="experienceInformation" class="section">
+            <h3>Experience Information</h3>
+            <mat-form-field appearance="fill">
+                <mat-label>Company Name</mat-label>
+                <input matInput formControlName="companyName" placeholder="Enter Company Name" />
+                <mat-error *ngIf="cvForm.get('experienceInformation.companyName')?.hasError('required')">
+                    Company Name is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>City</mat-label>
+                <input matInput formControlName="city" placeholder="Enter City" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Company Field</mat-label>
+                <input matInput formControlName="companyField" placeholder="Enter Company Field" />
+            </mat-form-field>
+        </div>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="cvForm.invalid">
+            {{ isEditMode ? 'Update' : 'Submit' }}
+        </button>
+    </form>
+</div>
