@@ -90,11 +90,11 @@ src/
 
 Here are the available API endpoints the frontend interacts with:
 
-- **GET /cv** - Fetch all CVs
-- **GET /cv/{id}** - Fetch a specific CV by ID
-- **POST /cv** - Create a new CV
-- **PUT /cv/{id}** - Update an existing CV
-- **DELETE /cv/{id}** - Delete a CV
+- **GET /cvs** - Fetch all CVs
+- **GET /cvs/{id}** - Fetch a specific CV by ID
+- **POST /cvs** - Create a new CV
+- **PUT /cvs/{id}** - Update an existing CV
+- **DELETE /cvs/{id}** - Delete a CV
 
 ## Authentication
 
